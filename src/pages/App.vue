@@ -4,6 +4,8 @@
       <Header></Header>
     </template>
     <template slot="body">
+      <SearchInput></SearchInput>
+      <AndOrButton></AndOrButton>
       <HelloWorld></HelloWorld>
     </template>
   </App>
@@ -14,27 +16,16 @@ import HelloWorld from '../components/HelloWorld';
 import Vue from 'vue';
 import Header from '../components/atoms/Header';
 import App from '../components/templates/App.vue';
+import SearchInput from '../components/atoms/SearchInput.vue';
+import AndOrButton from '../components/atoms/AndOrButton.vue';
 
 export default Vue.extend({
   components: {
     HelloWorld,
     Header,
     App,
-  },
-  data() {
-    return {
-      clipped: false,
-      drawer: true,
-      fixed: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Inspire',
-      }],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
-    };
+    SearchInput,
+    AndOrButton,
   },
 });
 </script>
