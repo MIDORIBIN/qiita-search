@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import request from '@/service/request-service.ts';
 
 export default Vue.extend({
   methods: {
@@ -18,7 +19,7 @@ export default Vue.extend({
       this.$emit('change', keyword);
     },
     search() {
-      console.log('aa');
+      request();
     },
   },
 });
