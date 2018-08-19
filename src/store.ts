@@ -6,11 +6,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     searchKeyword: '',
+    andOr: '',
   },
   mutations: {
     setSearchKeyword(state, keyword: string) {
       state.searchKeyword = keyword;
-      console.log(state.searchKeyword);
+    },
+    setAndOr(state, andOr: string) {
+      state.andOr = andOr;
+      console.log(state.andOr);
     },
   },
   actions: {

@@ -13,7 +13,11 @@ export default Vue.extend({
   methods: {
     click() {
       this.showIndex = (this.showIndex + 1) % this.showText.length;
+      this.$emit('change', this.showText[this.showIndex]);
     },
+  },
+  mounted() {
+    this.$emit('change', this.showText[this.showIndex]);
   },
 });
 </script>

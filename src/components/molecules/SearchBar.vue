@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-layout row fill-height>
-      <SearchInput></SearchInput>
-      <AndOrButton></AndOrButton>
+      <SearchInput @change="inputChange"></SearchInput>
+      <AndOrButton @change="andOrChange"></AndOrButton>
     </v-layout>
   </v-container>
 </template>
@@ -16,6 +16,14 @@ export default Vue.extend({
   components: {
     AndOrButton,
     SearchInput,
+  },
+  methods: {
+    inputChange(keyword: string) {
+      this.$store.commit('setSearchKeyword', keyword);
+    },
+    andOrChange(andOr: string) {
+      this.$store.commit('setAndOr', andOr);
+    },
   },
 });
 </script>
