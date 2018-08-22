@@ -7,6 +7,8 @@ export default new Vuex.Store({
   state: {
     searchKeyword: '',
     andOr: '',
+    isPopular: false,
+    period: '',
   },
   mutations: {
     setSearchKeyword(state, keyword: string) {
@@ -14,7 +16,12 @@ export default new Vuex.Store({
     },
     setAndOr(state, andOr: string) {
       state.andOr = andOr;
-      console.log(state.andOr);
+    },
+    setPopular(state, isPopular: boolean) {
+      state.isPopular = isPopular;
+    },
+    setPeriod(state, period: string) {
+      state.period = period;
     },
   },
   actions: {

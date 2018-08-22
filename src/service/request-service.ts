@@ -1,12 +1,26 @@
 import store from '@/store.ts';
 
 export default function() {
-  const searchKeyword = andOr(store.state.searchKeyword);
-  window.open('https://qiita.com/search?q=' + searchKeyword);
+  let searchKeyword = andOr(store.state.searchKeyword);
+  searchKeyword += popular(store.state.isPopular);
+  searchKeyword += period(store.state.period);
+  window.open('https://qiita.com/search?utf8=✓&q=' + searchKeyword);
 }
 function andOr(keyword: string): string {
   if (store.state.andOr === 'AND') {
     return keyword;
   }
   return keyword.split(' ').join(' OR ');
+}
+function popular(isPopular: boolean): string {
+  if (!isPopular) {
+    return '';
+  }
+  return '+stocks%3A>10';
+}
+function period(periodStr: string) {
+  if (periodStr.length === 0) {
+    return '';
+  }
+  return '+created%3A>' + periodStr;
 }
