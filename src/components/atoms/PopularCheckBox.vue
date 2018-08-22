@@ -15,11 +15,11 @@ export default Vue.extend({
   }),
   watch: {
     checkbox() {
-      this.$store.commit('setPopular', this.checkbox);
+      this.$emit('change', this.checkbox);
     },
   },
   mounted() {
-    this.$store.commit('setPopular', this.checkbox);
+    this.$emit('change', this.checkbox);
   },
 });
 </script>

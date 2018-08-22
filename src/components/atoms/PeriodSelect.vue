@@ -37,7 +37,7 @@ export default Vue.extend({
   },
   watch: {
     select() {
-      this.$store.commit('setPeriod', this.select.abbr);
+      this.$emit('change', this.select.abbr);
     },
   },
 });
