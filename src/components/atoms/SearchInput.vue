@@ -16,6 +16,7 @@ import request from '@/service/request-service.ts';
 export default Vue.extend({
   methods: {
     change(keyword: string) {
+      keyword = keyword === undefined ? '' : keyword;
       this.$emit('change', keyword);
     },
     search() {
