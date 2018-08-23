@@ -1,7 +1,6 @@
 <template>
   <OneCheckBox
-          label="人気"
-          :checkbox=true
+          label="OR検索"
           @change="change"
   ></OneCheckBox>
 </template>

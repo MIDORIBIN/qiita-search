@@ -8,7 +8,7 @@ export default function() {
   window.open('https://qiita.com/search?utf8=✓&q=' + searchKeyword);
 }
 function andOr(keyword: string): string {
-  if (store.state.andOr === 'AND') {
+  if (!store.state.isOrSearch) {
     return keyword;
   }
   return keyword.split(' ').join(' OR ');

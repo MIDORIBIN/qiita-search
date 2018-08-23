@@ -6,17 +6,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     searchKeyword: '',
-    andOr: '',
     isPopular: false,
     period: '',
     tagList: [] as string[],
+    isOrSearch: false,
   },
   mutations: {
     setSearchKeyword(state, keyword: string) {
       state.searchKeyword = keyword;
-    },
-    setAndOr(state, andOr: string) {
-      state.andOr = andOr;
     },
     setPopular(state, isPopular: boolean) {
       state.isPopular = isPopular;
@@ -26,6 +23,9 @@ export default new Vuex.Store({
     },
     setTagList(state, tagList: string[]) {
       state.tagList = tagList;
+    },
+    setIsOrSearch(state, isOrSearch: boolean) {
+      state.isOrSearch = isOrSearch;
     },
   },
   actions: {
