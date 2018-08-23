@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar color="indigo" dark fixed app>
+  <v-toolbar color="green accent-4" dark fixed app>
     <v-toolbar-title>Qiita検索</v-toolbar-title>
   </v-toolbar>
 </template>

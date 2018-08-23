@@ -1,23 +1,27 @@
 <template>
-  <v-combobox
-          v-model="chips"
-          :items="items"
-          label="Your favorite hobbies"
-          chips
-          prepend-icon="filter_list"
-          solo
-          multiple
-  >
-    <template slot="selection" slot-scope="data">
-      <v-chip
-              :selected="data.selected"
-              close
-              @input="remove(data.item)"
-      >
-        <strong>{{ data.item }}</strong>&nbsp;
-      </v-chip>
-    </template>
-  </v-combobox>
+  <v-container>
+    <v-combobox
+            v-model="chips"
+            :items="items"
+            label="タグ検索"
+            chips
+            prepend-icon="local_offer"
+            solo
+            multiple
+    >
+      <template slot="selection" slot-scope="data">
+        <v-chip
+                :selected="data.selected"
+                close
+                color="green accent-4"
+                text-color="white"
+                @input="remove(data.item)"
+        >
+          <strong>{{ data.item }}</strong>&nbsp;
+        </v-chip>
+      </template>
+    </v-combobox>
+  </v-container>
 </template>
 
 <script lang="ts">

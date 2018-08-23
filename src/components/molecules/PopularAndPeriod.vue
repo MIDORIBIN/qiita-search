@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PopularCheckBox from '@/components/atoms/PopularCheckBox.vue';
 import PeriodSelect from '@/components/atoms/PeriodSelect.vue';
+import PopularCheckBox from '@/components/molecules/PopularCheckBox.vue';
 
 export default Vue.extend({
   components: {
