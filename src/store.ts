@@ -9,6 +9,7 @@ export default new Vuex.Store({
     andOr: '',
     isPopular: false,
     period: '',
+    tagList: [] as string[],
   },
   mutations: {
     setSearchKeyword(state, keyword: string) {
@@ -23,8 +24,10 @@ export default new Vuex.Store({
     setPeriod(state, period: string) {
       state.period = period;
     },
+    setTagList(state, tagList: string[]) {
+      state.tagList = tagList;
+    },
   },
   actions: {
-
   },
 });

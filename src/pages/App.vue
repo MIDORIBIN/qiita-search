@@ -6,6 +6,7 @@
     <template slot="body">
       <SearchBar></SearchBar>
       <PopularAndPeriod></PopularAndPeriod>
+      <TagSelect></TagSelect>
     </template>
   </App>
 </template>
@@ -16,6 +17,7 @@ import Header from '../components/atoms/Header';
 import App from '../components/templates/App.vue';
 import SearchBar from '../components/molecules/SearchBar.vue';
 import PopularAndPeriod from '@/components/molecules/PopularAndPeriod.vue';
+import TagSelect from '@/components/molecules/TagSelect.vue';
 
 export default Vue.extend({
   components: {
@@ -23,6 +25,7 @@ export default Vue.extend({
     App,
     SearchBar,
     PopularAndPeriod,
+    TagSelect,
   },
 });
 </script>

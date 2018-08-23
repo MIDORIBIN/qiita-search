@@ -4,6 +4,7 @@ export default function() {
   let searchKeyword = andOr(store.state.searchKeyword);
   searchKeyword += popular(store.state.isPopular);
   searchKeyword += period(store.state.period);
+  searchKeyword += tags(store.state.tagList);
   window.open('https://qiita.com/search?utf8=✓&q=' + searchKeyword);
 }
 function andOr(keyword: string): string {
@@ -23,4 +24,8 @@ function period(periodStr: string) {
     return '';
   }
   return '+created%3A>' + periodStr;
+}
+function tags(tagList: string[]) {
+  return tagList
+    .map((tag: string) => '+tag%3A' + tag);
 }
