@@ -1,7 +1,5 @@
 <template>
-  <v-container>
-    <SearchInput @change="inputChange"></SearchInput>
-  </v-container>
+  <SearchInput @change="inputChange"></SearchInput>
 </template>
 
 <script lang="ts">

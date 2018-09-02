@@ -1,10 +1,8 @@
 <template>
-  <v-container>
-    <v-layout row>
-      <CheckBoxList></CheckBoxList>
-      <PeriodSelect @change="periodChange"></PeriodSelect>
-    </v-layout>
-  </v-container>
+  <v-layout row>
+    <CheckBoxList></CheckBoxList>
+    <PeriodSelect @change="periodChange"></PeriodSelect>
+  </v-layout>
 </template>
 
 <script lang="ts">
