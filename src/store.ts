@@ -6,10 +6,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     searchKeyword: '',
-    isPopular: false,
     period: '',
     tagList: [] as string[],
+    isPopular: false,
     isOrSearch: false,
+    isTitle: false,
+    isBody: false,
   },
   mutations: {
     setSearchKeyword(state, keyword: string) {
@@ -26,6 +28,12 @@ export default new Vuex.Store({
     },
     setIsOrSearch(state, isOrSearch: boolean) {
       state.isOrSearch = isOrSearch;
+    },
+    setIsTitle(state, isTitle: boolean) {
+      state.isTitle = isTitle;
+    },
+    setIsBody(state, isBody: boolean) {
+      state.isBody = isBody;
     },
   },
   actions: {

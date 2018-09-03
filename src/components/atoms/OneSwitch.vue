@@ -1,9 +1,9 @@
 <template>
-  <v-checkbox
-          v-model="tmpCheckbox"
+  <v-switch
+          v-model="tmpSwitch"
           :label="label"
   >
-  </v-checkbox>
+  </v-switch>
 </template>
 
 <script lang="ts">
@@ -12,7 +12,7 @@ import Vue from 'vue';
 export default Vue.extend({
   props: {
     label: String,
-    checkbox: {
+    switch: {
       type: Boolean,
       default: false,
     },
@@ -20,16 +20,16 @@ export default Vue.extend({
   // tslint:disable-next-line
   data () {
     return {
-      tmpCheckbox: this.checkbox,
+      tmpSwitch: this.switch,
     };
   },
   watch: {
-    tmpCheckbox(checkboxFlag: boolean) {
-      this.$emit('change', checkboxFlag);
+    tmpSwitch(switchFlag: boolean) {
+      this.$emit('change', switchFlag);
     },
   },
   mounted() {
-    this.$emit('change', this.tmpCheckbox);
+    this.$emit('change', this.tmpSwitch);
   },
 });
 </script>

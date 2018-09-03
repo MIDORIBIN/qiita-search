@@ -1,19 +1,19 @@
 <template>
   <v-layout row>
-    <CheckBoxList></CheckBoxList>
+    <SwitchList></SwitchList>
     <PeriodSelect @change="periodChange"></PeriodSelect>
   </v-layout>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import CheckBoxList from '@/components/organisms/CheckBoxList.vue';
 import PeriodSelect from '@/components/atoms/PeriodSelect.vue';
+import SwitchList from '@/components/organisms/SwitchList.vue';
 
 export default Vue.extend({
   components: {
-    CheckBoxList,
     PeriodSelect,
+    SwitchList,
   },
   methods: {
     periodChange(periodStr: string) {

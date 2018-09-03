@@ -25,7 +25,8 @@ function period(periodStr: string) {
   }
   return '+created%3A>' + periodStr;
 }
-function tags(tagList: string[]) {
+function tags(tagList: string[]): string {
   return tagList
-    .map((tag: string) => '+tag%3A' + tag);
+    .map((tag: string) => '+tag%3A' + tag)
+    .join('');
 }
