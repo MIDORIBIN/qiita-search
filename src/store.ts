@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     searchKeyword: '',
     period: '',
+    sort: '',
     tagList: [] as string[],
     isPopular: false,
     isOrSearch: false,
@@ -17,14 +18,17 @@ export default new Vuex.Store({
     setSearchKeyword(state, keyword: string) {
       state.searchKeyword = keyword;
     },
-    setPopular(state, isPopular: boolean) {
-      state.isPopular = isPopular;
-    },
     setPeriod(state, period: string) {
       state.period = period;
     },
+    setSort(state, sort: string) {
+      state.sort = sort;
+    },
     setTagList(state, tagList: string[]) {
       state.tagList = tagList;
+    },
+    setIsPopular(state, isPopular: boolean) {
+      state.isPopular = isPopular;
     },
     setIsOrSearch(state, isOrSearch: boolean) {
       state.isOrSearch = isOrSearch;

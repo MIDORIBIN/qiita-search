@@ -6,8 +6,8 @@
           item-value="abbr"
           return-object
           single-line
+          color="green accent-4"
   >
-
   </v-select>
 </template>
 

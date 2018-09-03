@@ -2,6 +2,7 @@
   <v-switch
           v-model="tmpSwitch"
           :label="label"
+          color="green accent-4"
   >
   </v-switch>
 </template>

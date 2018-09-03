@@ -17,7 +17,7 @@ export default Vue.extend({
   },
   methods: {
     popular(isPopular: boolean) {
-      this.$store.commit('setPopular', isPopular);
+      this.$store.commit('setIsPopular', isPopular);
     },
     or(isOr: boolean) {
       this.$store.commit('setIsOrSearch', isOr);
