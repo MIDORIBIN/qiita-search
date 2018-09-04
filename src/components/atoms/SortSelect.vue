@@ -2,6 +2,8 @@
   <v-select
           v-model="select"
           :items="items"
+          item-text="state"
+          item-value="abbr"
           return-object
           single-line
           color="green accent-4"
@@ -14,19 +16,19 @@ import Vue from 'vue';
 
 export default Vue.extend({
   data: () => ({
-    select: '関連順',
+    select: { state: '関連順', abbr: 'rel' },
     items: [
-      '新着順',
-      '関連順',
-      'ストック数順',
+      { state: '新着順', abbr: 'created' },
+      { state: '関連順', abbr: 'rel' },
+      { state: 'ストック数順', abbr: 'stock' },
     ],
   }),
   mounted() {
-    this.$emit('change', this.select);
+    this.$emit('change', this.select.abbr);
   },
   watch: {
     select() {
-      this.$emit('change', this.select);
+      this.$emit('change', this.select.abbr);
     },
   },
 });

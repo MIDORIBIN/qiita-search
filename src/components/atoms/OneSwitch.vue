@@ -3,6 +3,7 @@
           v-model="tmpSwitch"
           :label="label"
           color="green accent-4"
+          :disabled="disabled"
   >
   </v-switch>
 </template>
@@ -14,6 +15,10 @@ export default Vue.extend({
   props: {
     label: String,
     switch: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
       type: Boolean,
       default: false,
     },

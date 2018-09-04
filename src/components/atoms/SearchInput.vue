@@ -5,7 +5,6 @@
           append-icon="search"
           @change="change"
           @click:append="search"
-          @keyup.native.enter="search"
   ></v-text-field>
 </template>
 

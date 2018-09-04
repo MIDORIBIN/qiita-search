@@ -42,4 +42,15 @@ export default new Vuex.Store({
   },
   actions: {
   },
+  getters: {
+    isOrSearch(state) {
+      return state.isOrSearch;
+    },
+    isTitle(state) {
+      return state.isTitle;
+    },
+    isBody(state) {
+      return state.isBody;
+    },
+  },
 });

@@ -1,5 +1,5 @@
 <template>
-  <App>
+  <App @keyup.native.enter="search">
     <template slot="header">
       <Header></Header>
     </template>
@@ -13,6 +13,7 @@
 
 <script>
 import Vue from 'vue';
+import request from '@/service/request-service.ts';
 import Header from '../components/atoms/Header';
 import App from '../components/templates/App.vue';
 import SearchBar from '../components/molecules/SearchBar.vue';
@@ -26,6 +27,11 @@ export default Vue.extend({
     SearchBar,
     TagSelect,
     OptionList,
+  },
+  methods: {
+    search() {
+      request();
+    },
   },
 });
 </script>
