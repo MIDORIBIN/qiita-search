@@ -7,6 +7,7 @@
       <SearchBar></SearchBar>
       <OptionList></OptionList>
       <TagSelect></TagSelect>
+      <CandidateList></CandidateList>
     </template>
   </App>
 </template>
@@ -19,6 +20,7 @@ import App from '../components/templates/App.vue';
 import SearchBar from '../components/molecules/SearchBar.vue';
 import TagSelect from '@/components/molecules/TagSelect.vue';
 import OptionList from '@/components/organisms/OptionList.vue';
+import CandidateList from '@/components/organisms/CandidateList.vue';
 
 export default Vue.extend({
   components: {
@@ -27,6 +29,7 @@ export default Vue.extend({
     SearchBar,
     TagSelect,
     OptionList,
+    CandidateList,
   },
   methods: {
     search() {
