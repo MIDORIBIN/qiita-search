@@ -1,5 +1,8 @@
 export default class Candidate {
-  constructor(title: string, tagList: string[]) {
+  constructor(
+    public title: string,
+    public tagList: string[],
+  ) {
     //
   }
 }

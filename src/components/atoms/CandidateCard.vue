@@ -19,9 +19,11 @@
 import Vue from 'vue';
 import Candidate from '../../entity/candidate';
 
+type Prop<T> = () => T;
+
 export default Vue.extend({
   props: {
-    candidate: Candidate,
+    candidate: Object as Prop<Candidate>,
   },
 });
 </script>

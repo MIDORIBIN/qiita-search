@@ -1,15 +1,15 @@
-import store from '@/store.ts';
+import store from '@/store/main-store';
 
 export default function() {
   const query = createQuery(
-    store.state.isPopular,
-    store.state.period,
-    store.state.tagList,
-    store.state.sort,
-    store.state.searchKeyword,
-    store.state.isOrSearch,
-    store.state.isTitle,
-    store.state.isBody,
+    store.state.searchStore.isPopular,
+    store.state.searchStore.period,
+    store.state.searchStore.tagList,
+    store.state.searchStore.sort,
+    store.state.searchStore.searchKeyword,
+    store.state.searchStore.isOrSearch,
+    store.state.searchStore.isTitle,
+    store.state.searchStore.candidateList,
   );
   window.open('https://qiita.com/search?utf8=✓&q=' + query);
 }

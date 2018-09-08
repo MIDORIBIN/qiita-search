@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import tagList from '@/service/getTagList.ts';
+import tagList from '@/service/get-tag-list.ts';
 
 export default Vue.extend({
   data: () => ({
