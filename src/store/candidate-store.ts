@@ -17,16 +17,30 @@ const mutations = {
   setCandidateList(state, candidateList: Candidate[]) {
     state.candidateList = candidateList;
   },
-  addShowCandidateList(state, addNumber: number) {
-    state.showCandidateList = state.candidateList
-      .slice(0, state.showCandidateList.length + addNumber);
+  setShowCandidateList(state, endIndex: number) {
+    state.showCandidateList = state.candidateList.slice(0, endIndex);
   },
 } as MutationTree<State>;
 
 const actions = {
   initCandidateList({ commit }) {
     commit('setCandidateList', getCandidateList);
-    commit('addShowCandidateList', 30);
+    commit('setShowCandidateList', 30);
+  },
+  searchFilter({ commit }, tagList: string[]) {
+    const arrayFilter = (target: string[], conditionList: string[]): boolean => {
+      return conditionList
+        .map((condition: string) => target.indexOf(condition) >= 0)
+        .reduce((pre: boolean, cur: boolean) => pre && cur, true);
+    };
+    const filterList = getCandidateList
+      .filter((candidate: Candidate) => arrayFilter(candidate.tagList, tagList));
+    commit('setCandidateList', filterList);
+    commit('setShowCandidateList', 30);
+  },
+  incShowCandidate({ commit, state }) {
+    commit('setShowCandidateList', state.showCandidateList.length + 30);
+    return state.showCandidateList.length !== state.candidateList.length;
   },
 } as ActionTree<State, any>;
 

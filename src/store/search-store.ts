@@ -21,6 +21,9 @@ const getters = {
   isBody(state) {
     return state.isBody;
   },
+  tagList(state) {
+    return state.tagList;
+  },
 } as GetterTree<State, any>;
 
 const mutations = {

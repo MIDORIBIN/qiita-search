@@ -26,14 +26,28 @@ export default Vue.extend({
     this.$store.dispatch('initCandidateList');
   },
   computed: {
-    candidateList: function() {
+    candidateList: function() { // tslint:disable-line
       return this.$store.getters.showCandidateList;
+    },
+    searchTagList: function () { // tslint:disable-line
+      return this.$store.getters.tagList;
+    },
+  },
+  watch: {
+    searchTagList(tagList: string[]) {
+      this.$store.dispatch('searchFilter', tagList);
     },
   },
   methods: {
-    infiniteHandler($state) {
-      this.$store.commit('addShowCandidateList', 30);
-      $state.loaded();
+    infiniteHandler($state: any) {
+      this.$store.dispatch('incShowCandidate')
+        .then((flag: boolean) => {
+          if (flag) {
+            $state.loaded();
+          } else {
+            $state.complete();
+          }
+        });
     },
   },
 });
