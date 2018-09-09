@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import CandidateCard from '@/components/atoms/CandidateCard.vue';
+import CandidateCard from '@/components/molecules/CandidateCard.vue';
 import InfiniteLoading from 'vue-infinite-loading';
 
 export default Vue.extend({

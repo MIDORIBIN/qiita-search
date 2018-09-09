@@ -28,7 +28,6 @@ import tagList from '@/service/get-tag-list.ts';
 
 export default Vue.extend({
   data: () => ({
-    chips: [] as string[],
     items: [] as string[],
   }),
   methods: {
@@ -38,6 +37,11 @@ export default Vue.extend({
   },
   mounted() {
     this.items.push(...tagList);
+  },
+  computed: {
+    chips: function () { // tslint:disable-line
+      return this.$store.getters.tagList;
+    },
   },
   watch: {
     chips() {

@@ -54,6 +54,10 @@ const mutations = {
 } as MutationTree<State>;
 
 const actions = {
+  addTag({ commit, state }, tag: string) {
+    const array = state.tagList.concat([tag]);
+    commit('setTagList', array);
+  },
 } as ActionTree<State, any>;
 
 export default {
