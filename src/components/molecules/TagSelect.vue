@@ -1,7 +1,7 @@
 <template>
   <v-combobox
-          v-model="chips"
-          :items="items"
+          v-model="selectedTagList"
+          :items="tagList"
           label="タグ検索"
           chips
           prepend-icon="local_offer"
@@ -24,28 +24,32 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import tagList from '@/service/get-tag-list.ts';
+import getTagList from '@/service/get-tag-list.ts';
 
 export default Vue.extend({
   data: () => ({
-    items: [] as string[],
+    tagList: [] as string[],
+    selectedTagList: [] as string[],
   }),
   methods: {
-    remove(item: string) {
-      this.chips.splice(this.chips.indexOf(item), 1);
+    remove(tag: string) {
+      this.$store.dispatch('deleteTag', tag);
     },
   },
   mounted() {
-    this.items.push(...tagList);
+    this.tagList.push(...getTagList);
   },
   computed: {
-    chips: function () { // tslint:disable-line
+    storeTagList: function() { // tslint:disable-line
       return this.$store.getters.tagList;
     },
   },
   watch: {
-    chips() {
-      this.$store.commit('setTagList', this.chips);
+    storeTagList(list: string[]) {
+      this.selectedTagList = list;
+    },
+    selectedTagList(list: string[]) {
+      this.$store.commit('setTagList', list);
     },
   },
 });

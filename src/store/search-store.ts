@@ -1,4 +1,5 @@
 import {ActionTree, GetterTree, MutationTree} from 'vuex';
+import getTagList from '@/service/get-tag-list.ts';
 
 export class State {
   public searchKeyword = '';
@@ -56,6 +57,11 @@ const mutations = {
 const actions = {
   addTag({ commit, state }, tag: string) {
     const array = state.tagList.concat([tag]);
+    commit('setTagList', array);
+  },
+  deleteTag({ commit, state }, tag: string) {
+    const array = state.tagList;
+    array.splice(array.indexOf(tag), 1);
     commit('setTagList', array);
   },
 } as ActionTree<State, any>;

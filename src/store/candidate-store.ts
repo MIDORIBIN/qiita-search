@@ -1,6 +1,6 @@
 import {ActionTree, GetterTree, MutationTree} from 'vuex';
 import Candidate from '@/entity/candidate';
-import getCandidateList from '@/service/get-candidate-list.ts';
+import jsonCandidateList from '@/assets/candidateList.json';
 
 export class State {
   public candidateList = [] as Candidate[];
@@ -24,7 +24,7 @@ const mutations = {
 
 const actions = {
   initCandidateList({ commit }) {
-    commit('setCandidateList', getCandidateList);
+    commit('setCandidateList', jsonCandidateList);
     commit('setShowCandidateList', 30);
   },
   searchFilter({ commit }, tagList: string[]) {
@@ -33,7 +33,7 @@ const actions = {
         .map((condition: string) => target.indexOf(condition) >= 0)
         .reduce((pre: boolean, cur: boolean) => pre && cur, true);
     };
-    const filterList = getCandidateList
+    const filterList = jsonCandidateList
       .filter((candidate: Candidate) => arrayFilter(candidate.tagList, tagList));
     commit('setCandidateList', filterList);
     commit('setShowCandidateList', 30);
