@@ -45,7 +45,7 @@ function period(periodStr: string): string {
 function tags(tagList: string[]): string {
   return tagList
     .map((tag: string) => '+tag%3A' + tag)
-    .join();
+    .join('');
 }
 function sort(sortStr: string): string {
   return '&sort=' + sortStr;
