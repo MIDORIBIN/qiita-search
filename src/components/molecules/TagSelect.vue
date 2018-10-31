@@ -41,13 +41,12 @@ export default Vue.extend({
   },
   computed: {
     selectTagList: {
-      get: function(): string[] {
+      get(): string[] {
         return this.$store.getters.tagList;
       },
-      set: function(list) {
+      set(list: string[]) {
         this.$store.commit('setTagList', list);
-      }
-
+      },
     },
   },
 });

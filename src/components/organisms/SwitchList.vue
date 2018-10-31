@@ -30,10 +30,10 @@ export default Vue.extend({
     },
   },
   computed: {
-    orFlag: function() { // tslint:disable-line
+    orFlag(): boolean {
       return this.$store.getters.isOrSearch;
     },
-    titleBodyFlag: function() { // tslint:disable-line
+    titleBodyFlag(): boolean {
       return this.$store.getters.isTitle || this.$store.getters.isBody;
     },
   },

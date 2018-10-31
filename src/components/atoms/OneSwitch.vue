@@ -23,8 +23,7 @@ export default Vue.extend({
       default: false,
     },
   },
-  // tslint:disable-next-line
-  data () {
+  data() {
     return {
       tmpSwitch: this.switch,
     };

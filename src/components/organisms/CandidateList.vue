@@ -16,6 +16,7 @@
 import Vue from 'vue';
 import CandidateCard from '@/components/molecules/CandidateCard.vue';
 import InfiniteLoading from 'vue-infinite-loading';
+import Candidate from '../../entity/candidate';
 
 export default Vue.extend({
   components: {
@@ -26,10 +27,10 @@ export default Vue.extend({
     this.$store.dispatch('initCandidateList');
   },
   computed: {
-    candidateList: function() { // tslint:disable-line
+    candidateList(): Candidate[] {
       return this.$store.getters.showCandidateList;
     },
-    searchTagList: function () { // tslint:disable-line
+    searchTagList(): string[] {
       return this.$store.getters.tagList;
     },
   },
