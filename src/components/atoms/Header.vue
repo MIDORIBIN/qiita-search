@@ -1,6 +1,6 @@
 <template>
   <v-toolbar color="green accent-4" dark fixed app>
-    <v-toolbar-title>Qiita検索</v-toolbar-title>
+    <img src="@/assets/logo2.png" alt="" height="60">
   </v-toolbar>
 </template>
 
