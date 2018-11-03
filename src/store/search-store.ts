@@ -1,5 +1,4 @@
 import {ActionTree, GetterTree, MutationTree} from 'vuex';
-import getTagList from '@/service/get-tag-list.ts';
 
 export class State {
   public searchKeyword = '';
