@@ -7,6 +7,7 @@
           prepend-icon="local_offer"
           solo
           multiple
+          color="green accent-4"
   >
     <template slot="selection" slot-scope="data">
       <v-chip

@@ -1,11 +1,11 @@
 <template>
   <v-container
           fluid
-          grid-list-sm
+          grid-list-md
   >
     <v-layout row wrap>
-      <v-flex v-for="candidate in candidateList" :key="candidate.itemId" xs4>
-        <CandidateCard :candidate="candidate"></CandidateCard>
+      <v-flex v-for="candidate in candidateList" :key="candidate.itemId" md4>
+        <CandidateCard :candidate="candidate" style="height: 100%"></CandidateCard>
       </v-flex>
     </v-layout>
     <infinite-loading @infinite="infiniteHandler"></infinite-loading>

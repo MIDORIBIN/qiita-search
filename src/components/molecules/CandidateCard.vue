@@ -1,9 +1,9 @@
 <template>
-  <v-card class="green--text">
+  <v-card elevation-24 hover="true">
     <v-card-title primary-title @click="link">
       <div class="headline" style="cursor:pointer">{{candidate.title}}</div>
     </v-card-title>
-    <v-card-actions>
+    <v-card-actions color="green accent-4">
       <div class="text-xs-center">
         <TagChip
                 v-for="tagName in candidate.tagList" :key="tagName"
