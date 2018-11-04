@@ -4,7 +4,7 @@
           grid-list-md
   >
     <v-layout row wrap>
-      <v-flex v-for="candidate in candidateList" :key="candidate.itemId" md4>
+      <v-flex v-for="candidate in candidateList" :key="candidate.itemId" md6>
         <CandidateCard :candidate="candidate" style="height: 100%"></CandidateCard>
       </v-flex>
     </v-layout>

@@ -1,16 +1,16 @@
 <template>
   <v-container
           fluid
-          grid-list-sm
+          grid-list-md
   >
     <v-layout row>
-      <v-flex xs6>
+      <v-flex md6>
         <SwitchList></SwitchList>
       </v-flex>
-      <v-flex xs3>
+      <v-flex md3>
         <PeriodSelect @change="periodChange"></PeriodSelect>
       </v-flex>
-      <v-flex xs3>
+      <v-flex md3>
         <SortSelect @change="sortChange"></SortSelect>
       </v-flex>
     </v-layout>
